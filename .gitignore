@@ -1,0 +1,12 @@
+# Xcode noise
+*.xcworkspace/xcuserdata/*
+*.xcodeproj/xcuserdata/*
+*.xcodeproj/project.xcworkspace/*
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.xccheckout
+
+# OS X noise
+.DS_Store
+
