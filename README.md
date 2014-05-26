@@ -36,12 +36,12 @@ with
 @morph(view.frame, _.size.width += 10);
 ```
 
-These work with code completion, and Xcode indents them sanely (recommend braces for
+Code completion and standard Xcode indentation work sanely (recommend braces for
 multiple lines). More deets in the header file. 
 
 # How to use?
 
-To use, download `VARWithMorph.h` and put it into your Xcode project.
+To use, download [`VARWithMorph.h`](https://raw.githubusercontent.com/claybridges/libvarobjc/master/varobjc/VARWithMorph.h) and put it into your Xcode project.
 
 # License
 
