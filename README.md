@@ -1,7 +1,7 @@
 # What is this?
 
-Tiny Objective-C macros, `@with` and `morph`. They use a scoped local variable `_` to
-let you replace things like
+Tiny Objective-C macros, `@with` and `@morph`, devoted to [DRYness][dry] and
+ concision. Via a scoped local variable `_`, they replace code like
 
 ```
 MySuperDescriptivelyNamedRequest *request = [[MySuperDescriptivelyNamedRequest alloc] init];
@@ -22,7 +22,7 @@ with
 });
 ```
 
-and replace (ever seen this before? :)
+or replace common
 
 ```
 CGRect frame = view.frame;
@@ -36,14 +36,17 @@ with
 @morph(view.frame, _.size.width += 10);
 ```
 
-Code completion and standard Xcode indentation work sanely (recommend braces for
-multiple lines). More deets in the header file. 
+Code completion and Xcode indentation work sanely. More deets in the header file. 
 
 # How to use?
 
-To use, download [`VARWithMorph.h`](https://raw.githubusercontent.com/claybridges/libvarobjc/master/varobjc/VARWithMorph.h) and put it into your Xcode project.
+Download [`VARWithMorph.h`][file], add to your Xcode project, and `#import`.
 
 # License
 
-MIT License. See LICENSE.md.
+MIT License. See [LICENSE.md][lic].
+
+[file]: https://raw.githubusercontent.com/claybridges/libvarobjc/master/varobjc/VARWithMorph.h
+[dry]: http://en.wikipedia.org/wiki/Don't_repeat_yourself
+[lic]: https://github.com/claybridges/libvarobjc/blob/master/LICENSE.md
 
