@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F8F0134193791C500E5B30D /* libvarobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F16C9351937915600AFD995 /* libvarobjc.m */; };
 		6FB7EB8C19321AF20052E29F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB7EB52193215DA0052E29F /* XCTest.framework */; };
 		6FB7EB8D19321AF20052E29F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB7EB7B19321AF20052E29F /* Cocoa.framework */; };
-		6FB7EB9019321AF20052E29F /* liblibvarobj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB7EB7A19321AF20052E29F /* liblibvarobj.a */; };
+		6FB7EB9019321AF20052E29F /* libvarobjc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB7EB7A19321AF20052E29F /* libvarobjc.a */; };
 		6FB875E019321BA600D7383A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB7EB3F193215B90052E29F /* CoreFoundation.framework */; };
-		6FC86A8F19321E300019DC1F /* VARWithMorph.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC86A8E19321E300019DC1F /* VARWithMorph.h */; };
-		6FC86A9219321EA00019DC1F /* VARWithMorphTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC86A9119321EA00019DC1F /* VARWithMorphTests.m */; };
+		6FC86A8F19321E300019DC1F /* VARMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC86A8E19321E300019DC1F /* VARMacros.h */; };
+		6FC86A9219321EA00019DC1F /* VARMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC86A9119321EA00019DC1F /* VARMacrosTests.m */; };
 		6FC86A9319321FD50019DC1F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB7EB8019321AF20052E29F /* AppKit.framework */; };
+		6FD530D219376EB8004B6C8D /* VARMacros.h in Resources */ = {isa = PBXBuildFile; fileRef = 6FC86A8E19321E300019DC1F /* VARMacros.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,18 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F16C9351937915600AFD995 /* libvarobjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libvarobjc.m; sourceTree = "<group>"; };
 		6FB7EB3F193215B90052E29F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		6FB7EB52193215DA0052E29F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6FB7EB7A19321AF20052E29F /* liblibvarobj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibvarobj.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB7EB7A19321AF20052E29F /* libvarobjc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libvarobjc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB7EB7B19321AF20052E29F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6FB7EB7E19321AF20052E29F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6FB7EB7F19321AF20052E29F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6FB7EB8019321AF20052E29F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		6FB7EB8319321AF20052E29F /* libvarobj-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libvarobj-Prefix.pch"; sourceTree = "<group>"; };
-		6FB7EB8B19321AF20052E29F /* libvarobj tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "libvarobj tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FB7EB9319321AF20052E29F /* libvarobjTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "libvarobjTests-Info.plist"; sourceTree = "<group>"; };
-		6FC86A8E19321E300019DC1F /* VARWithMorph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VARWithMorph.h; path = varobjc/VARWithMorph.h; sourceTree = SOURCE_ROOT; };
-		6FC86A9119321EA00019DC1F /* VARWithMorphTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VARWithMorphTests.m; sourceTree = "<group>"; };
+		6FB7EB8319321AF20052E29F /* varobjc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "varobjc-Prefix.pch"; sourceTree = "<group>"; };
+		6FB7EB8B19321AF20052E29F /* libvarobjc tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "libvarobjc tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB7EB9319321AF20052E29F /* varobjcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "varobjcTests-Info.plist"; sourceTree = "<group>"; };
+		6FC86A8E19321E300019DC1F /* VARMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VARMacros.h; path = varobjc/VARMacros.h; sourceTree = SOURCE_ROOT; };
+		6FC86A9119321EA00019DC1F /* VARMacrosTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VARMacrosTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +59,7 @@
 			files = (
 				6FC86A9319321FD50019DC1F /* AppKit.framework in Frameworks */,
 				6FB7EB8D19321AF20052E29F /* Cocoa.framework in Frameworks */,
-				6FB7EB9019321AF20052E29F /* liblibvarobj.a in Frameworks */,
+				6FB7EB9019321AF20052E29F /* libvarobjc.a in Frameworks */,
 				6FB7EB8C19321AF20052E29F /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,7 +70,7 @@
 		6FB7EB33193215B90052E29F = {
 			isa = PBXGroup;
 			children = (
-				6FB7EB8119321AF20052E29F /* libvarobj */,
+				6FB7EB8119321AF20052E29F /* varobjc */,
 				6FB7EB9119321AF20052E29F /* tests */,
 				6FB7EB3E193215B90052E29F /* Frameworks */,
 				6FB7EB3D193215B90052E29F /* Products */,
@@ -77,8 +80,8 @@
 		6FB7EB3D193215B90052E29F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6FB7EB7A19321AF20052E29F /* liblibvarobj.a */,
-				6FB7EB8B19321AF20052E29F /* libvarobj tests.xctest */,
+				6FB7EB7A19321AF20052E29F /* libvarobjc.a */,
+				6FB7EB8B19321AF20052E29F /* libvarobjc tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,39 +107,24 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		6FB7EB8119321AF20052E29F /* libvarobj */ = {
+		6FB7EB8119321AF20052E29F /* varobjc */ = {
 			isa = PBXGroup;
 			children = (
-				6FC86A8E19321E300019DC1F /* VARWithMorph.h */,
-				6FB7EB8219321AF20052E29F /* Supporting Files */,
+				6FC86A8E19321E300019DC1F /* VARMacros.h */,
+				6F16C9351937915600AFD995 /* libvarobjc.m */,
+				6FB7EB8319321AF20052E29F /* varobjc-Prefix.pch */,
 			);
-			path = libvarobj;
-			sourceTree = "<group>";
-		};
-		6FB7EB8219321AF20052E29F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6FB7EB8319321AF20052E29F /* libvarobj-Prefix.pch */,
-			);
-			name = "Supporting Files";
+			path = varobjc;
 			sourceTree = "<group>";
 		};
 		6FB7EB9119321AF20052E29F /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				6FC86A9119321EA00019DC1F /* VARWithMorphTests.m */,
-				6FB7EB9219321AF20052E29F /* Supporting Files */,
+				6FC86A9119321EA00019DC1F /* VARMacrosTests.m */,
+				6FB7EB9319321AF20052E29F /* varobjcTests-Info.plist */,
 			);
 			path = tests;
 			sourceTree = SOURCE_ROOT;
-		};
-		6FB7EB9219321AF20052E29F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6FB7EB9319321AF20052E29F /* libvarobjTests-Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -145,16 +133,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FC86A8F19321E300019DC1F /* VARWithMorph.h in Headers */,
+				6FC86A8F19321E300019DC1F /* VARMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6FB7EB7919321AF20052E29F /* libvarobj */ = {
+		6FB7EB7919321AF20052E29F /* libvarobjc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB7EB9919321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobj" */;
+			buildConfigurationList = 6FB7EB9919321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobjc" */;
 			buildPhases = (
 				6FB7EB7619321AF20052E29F /* Sources */,
 				6FB7EB7719321AF20052E29F /* Frameworks */,
@@ -164,14 +152,14 @@
 			);
 			dependencies = (
 			);
-			name = libvarobj;
+			name = libvarobjc;
 			productName = libvarobj;
-			productReference = 6FB7EB7A19321AF20052E29F /* liblibvarobj.a */;
+			productReference = 6FB7EB7A19321AF20052E29F /* libvarobjc.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		6FB7EB8A19321AF20052E29F /* libvarobj tests */ = {
+		6FB7EB8A19321AF20052E29F /* libvarobjc tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB7EB9C19321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobj tests" */;
+			buildConfigurationList = 6FB7EB9C19321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobjc tests" */;
 			buildPhases = (
 				6FB7EB8719321AF20052E29F /* Sources */,
 				6FB7EB8819321AF20052E29F /* Frameworks */,
@@ -182,9 +170,9 @@
 			dependencies = (
 				6FB7EB8F19321AF20052E29F /* PBXTargetDependency */,
 			);
-			name = "libvarobj tests";
+			name = "libvarobjc tests";
 			productName = libvarobjTests;
-			productReference = 6FB7EB8B19321AF20052E29F /* libvarobj tests.xctest */;
+			productReference = 6FB7EB8B19321AF20052E29F /* libvarobjc tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -208,8 +196,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6FB7EB7919321AF20052E29F /* libvarobj */,
-				6FB7EB8A19321AF20052E29F /* libvarobj tests */,
+				6FB7EB7919321AF20052E29F /* libvarobjc */,
+				6FB7EB8A19321AF20052E29F /* libvarobjc tests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD530D219376EB8004B6C8D /* VARMacros.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F8F0134193791C500E5B30D /* libvarobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FC86A9219321EA00019DC1F /* VARWithMorphTests.m in Sources */,
+				6FC86A9219321EA00019DC1F /* VARMacrosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +235,7 @@
 /* Begin PBXTargetDependency section */
 		6FB7EB8F19321AF20052E29F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6FB7EB7919321AF20052E29F /* libvarobj */;
+			target = 6FB7EB7919321AF20052E29F /* libvarobjc */;
 			targetProxy = 6FB7EB8E19321AF20052E29F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -325,12 +315,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libvarobj/libvarobj-Prefix.pch";
+				GCC_PREFIX_HEADER = "varobjc/varobjc-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = varobjc;
 			};
 			name = Debug;
 		};
@@ -338,8 +328,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libvarobj/libvarobj-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "varobjc/varobjc-Prefix.pch";
+				PRODUCT_NAME = varobjc;
 			};
 			name = Release;
 		};
@@ -352,12 +342,12 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libvarobj/libvarobj-Prefix.pch";
+				GCC_PREFIX_HEADER = "varobjc/varobjc-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "tests/libvarobjTests-Info.plist";
+				INFOPLIST_FILE = "tests/varobjcTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -372,8 +362,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "libvarobj/libvarobj-Prefix.pch";
-				INFOPLIST_FILE = "tests/libvarobjTests-Info.plist";
+				GCC_PREFIX_HEADER = "varobjc/varobjc-Prefix.pch";
+				INFOPLIST_FILE = "tests/varobjcTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -391,7 +381,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FB7EB9919321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobj" */ = {
+		6FB7EB9919321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobjc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FB7EB9A19321AF20052E29F /* Debug */,
@@ -400,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FB7EB9C19321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobj tests" */ = {
+		6FB7EB9C19321AF20052E29F /* Build configuration list for PBXNativeTarget "libvarobjc tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FB7EB9D19321AF20052E29F /* Debug */,

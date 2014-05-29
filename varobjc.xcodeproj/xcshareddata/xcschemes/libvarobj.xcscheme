@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6FB7EB7919321AF20052E29F"
-               BuildableName = "liblibvarobj.a"
-               BlueprintName = "libvarobj"
+               BuildableName = "libvarobjc.a"
+               BlueprintName = "libvarobjc"
                ReferencedContainer = "container:varobjc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6FB7EB8A19321AF20052E29F"
-               BuildableName = "libvarobj tests.xctest"
-               BlueprintName = "libvarobj tests"
+               BuildableName = "libvarobjc tests.xctest"
+               BlueprintName = "libvarobjc tests"
                ReferencedContainer = "container:varobjc.xcodeproj">
             </BuildableReference>
          </TestableReference>

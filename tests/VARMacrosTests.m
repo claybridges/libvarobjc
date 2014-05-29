@@ -1,5 +1,5 @@
 //
-//  VARWithMorphTests.m
+//  VARMacrosTests.m
 //  varobjc
 //
 //  Created by Clay Bridges on 26 May 2014.
@@ -7,7 +7,7 @@
 //  Released under the MIT license.
 
 #import <XCTest/XCTest.h>
-#import "VARWithMorph.h"
+#import "VARMacros.h"
 #import <AppKit/AppKit.h>
 
 // I love pith. Namespace collision possible.
@@ -37,7 +37,7 @@
 
 #pragma mark - VARWithMorphTests
 
-@interface VARWithMorphTests : XCTestCase
+@interface VARMacroTests : XCTestCase
 
 @property BOOL gotBanana;
 @property BOOL gotCow;
@@ -45,7 +45,7 @@
 
 @end
 
-@implementation VARWithMorphTests
+@implementation VARMacroTests
 
 - (void)testNoops
 {
@@ -77,7 +77,6 @@
     T(view.frame.size.width == 0);
     @morph(view.frame, _.size.width = 10);
     T(view.frame.size.width == 10);
-
 }
 
 - (void)testNotifications
@@ -85,17 +84,14 @@
     T(!_gotBanana);
     T(!_gotCow);
 
-    NSString * const banana = @"Banana!";
-    NSString * const mooooo = @"MOOOOO!";
+    @var(banana, @"Banana!");
+    @var(mooooo, @"MOOOOO!");
 
     @with([NSNotificationCenter defaultCenter], {
         [_ addObserver:self selector:@selector(handleBanana) name:banana object:nil];
         [_ addObserver:self selector:@selector(handleInterruptingCow) name:mooooo object:nil]; });
 
-    @with([NSNotificationCenter defaultCenter], {
-        [_ postNotificationName:banana object:nil];
-        [_ postNotificationName:mooooo object:nil];
-    });
+    // later in that app...
 
     @with([NSNotificationCenter defaultCenter], {
         [_ postNotificationName:banana object:nil];
@@ -121,9 +117,9 @@
 {
     T(!_requestExecuted);
 
-    NSString *accountId = @"ACCT123";
-    void(^successBlock)() = ^{};
-    void(^failureBlock)() = ^{};
+    @var(accountId, @"ACCT123");
+    @var(successBlock, ^{});
+    @var(failureBlock, ^{});
 
     MySuperDescriptivelyNamedRequest *request = [[MySuperDescriptivelyNamedRequest alloc] init];
     request.accountId = accountId;
@@ -154,6 +150,73 @@
     _requestExecuted = YES;
 }
 
+// the usual way of doing business
+- (void)testVarControl
+{
+    NSMutableDictionary *d = [NSMutableDictionary dictionary];
+    d[@"Bigbootie"] = @"John";
+    T([d isKindOfClass:[NSMutableDictionary class]]);
+    T([d[@"Bigbootie"] isEqualToString:@"John"]);
+
+    BOOL (^andBlock)(BOOL a, BOOL b) = ^BOOL(BOOL a, BOOL b) {
+        return (BOOL)a && b;
+    };
+
+    [self andTest:andBlock];
+}
+
+// using @var
+- (void)testVar
+{
+    @var(d, [NSMutableDictionary dictionary]);
+
+    d[@"Bigbootie"] = @"John";
+    T([d isKindOfClass:[NSMutableDictionary class]]);
+    T([d[@"Bigbootie"] isEqualToString:@"John"]);
+
+    BOOL (^assignTestVar)(BOOL a, BOOL b);
+
+    @var(andBlock, ^BOOL(BOOL a, BOOL b) {
+        return a && b;
+    });
+
+    assignTestVar = andBlock;
+
+    [self andTest:andBlock];
+    [self andTest:assignTestVar];
+
+    __block BOOL success = NO;
+    @var(block, ^{
+        success = YES;
+    });
+    block();
+
+    XCTAssertTrue(success, @"block was successfully called");
+
+    __unused void (^assignTestVar2)(void) = block; // test compiler type match with assignment
+}
+
+- (void)testVarExamples
+{
+    @var(arr, [NSMutableArray array]);
+
+    @var(sillyString, @"Flibberty Slazzozalmockle!!");
+    @var(set, [NSMutableSet set]);
+    @var(count, 1);
+
+    // sorta, kinda a test; also gets rid of unused warnings
+    [arr addObject:sillyString];
+    [arr addObject:set];
+    [arr addObject:@(count)];
+}
+
+- (void)andTest:(BOOL (^)(BOOL, BOOL))andBlock
+{
+    T(!andBlock(NO,  NO));
+    T(!andBlock(YES, NO));
+    T(!andBlock(NO,  YES));
+    T( andBlock(YES, YES));
+}
 
 // Is there a way to (XC)test for *desired* compiler errors?
 // Meanwhile, this might be instructive for the curious.
@@ -162,11 +225,15 @@
 {
     // uncomment to see compiler errors
 
+    // invalid as RHS in @morph
     // -> Expression not assignable
+    //
     //    NSView *view = [[NSView alloc] init];
     //    @morph(view.frame.size, _.width = 10);
 
+    // commas in @with value
     // -> Expected expression
+    //
     //    @with(@[@1, @2], int i = _.count);
 
     // const-ness...
@@ -176,7 +243,7 @@
     // ...but this works
     @with((CGRect)CGRectZero, _.size.width++;);
 
-    // _ doesn't survice scope
+    // _ doesn't survive scope
     // -> use of undeclared identifier '_'
     //    @with([@[] mutableCopy], [_ addObject:@1]);
     //    NSLog(@"%@", _);
@@ -185,6 +252,13 @@
     // -> Unusued variable '_'
     //    int i = 0;
     //    @with(i, i++);
+
+    // @var must be with valid RHS varname
+    // these generate various errors
+    //
+    // @var(void, 1);
+    // @var(1, 2);
+    // @var(@[], @"");
 }
 
 @end
