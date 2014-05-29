@@ -204,6 +204,6 @@ variable or pass it to a method that expects a particular type.
 #if DEBUG
     #define varlib_keywordify autoreleasepool {}
 #else
-    #define varlib_keywordify try {} @catch (...) {}
+    #define varlib_keywordify try {} @finally {}
 #endif
 

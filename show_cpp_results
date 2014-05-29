@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# For the interested delver, dumps the results of preprocessing the tests 
+# into less, and scrolls to the end. Only works when run from its dir.
+
+clang -I ./varobjc -F /System/Library/Frameworks -E ./tests/VARMacrosTests.m | less +G

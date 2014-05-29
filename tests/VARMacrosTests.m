@@ -35,7 +35,24 @@
 
 @end
 
-#pragma mark - VARWithMorphTests
+#pragma mark - CantInit class
+
+@interface CantInit : NSObject
+
+@end
+
+@implementation CantInit
+
+- (instancetype)init
+{
+    // causes exception
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
+@end
+
+#pragma mark - VARMacroTests
 
 @interface VARMacroTests : XCTestCase
 
@@ -46,6 +63,29 @@
 @end
 
 @implementation VARMacroTests
+
+// a proof that typeof(code) doesn't execute code, for those worried about it
+- (void)testTypeOf
+{
+    // some of the gratuitous varible use is to suppress unused warnings
+    // could use __unused, but didn't want to risk biasing test.
+
+    int i = 0;
+    typeof(i++) y = 1000;
+    y++; // to avoid unused warning
+    XCTAssertTrue(i == 0, @"typeof(i++) does not increment i");
+
+    XCTAssertThrows({
+        id foo = [[CantInit alloc] init];
+        foo = nil;
+    }, @"CantInit should not init");
+
+    XCTAssertNoThrow({
+        typeof([[CantInit alloc] init]) foo;
+        foo = nil; // suppress unused, could use __unused
+    }, @"typeof(alloc/init) does not increment call init");
+
+}
 
 - (void)testNoops
 {
