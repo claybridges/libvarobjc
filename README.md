@@ -1,12 +1,9 @@
 # What's this?
 
 A tiny library of Objective-C macros to aid concision, `@morph`, `@var` and
-`@with`. When using, code completion and Xcode indentation work sanely.
-Examples of use follow. You'll find more details in the header file. The unit
-tests are also instructive.
-
-Submission of issues & pull requests on *technical* objections or problems
-strongly encouraged.
+`@with`. In use, code completion and Xcode indentation work sanely.
+Examples follow, and you'll find more details in the header file, and more examples in
+the unit tests.
 
 # Examples
 
@@ -95,8 +92,7 @@ A CocoaPod is on the way, or feel free to create one & pull request.
 It's a local variable. Yes, it's allowed.
 
 **Does this use blocks?**   
-No. When required, the macros internally use C scoping using curly braces.
-Likewise, the braces in the examples are C scoping.
+No. Where needed, the macros use C scoping. The curly braces you see in the examples, same (e.g. `@macroname(thing, { // my C-scoped stuff });`)
 
 **MACROS BAD!!**  
 1. [Apple][block.h] uses them.  
