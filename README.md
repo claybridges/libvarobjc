@@ -84,7 +84,11 @@ Using `@with`, this would be
 
 Download [`VARMacros.h`][file], add to your Xcode project, and `#import`. 
 
-A CocoaPod is on the way, or feel free to create one & pull request.
+Using **CocoaPods**
+
+```
+pod 'libvarobjc', '~> 1.0'
+```
 
 # Questions, objections, ...
 
