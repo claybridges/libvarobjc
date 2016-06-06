@@ -1,4 +1,4 @@
-**[DEPRECATED]**
+# [DEPRECATED]
 
 This was an attempt to make Objective-C programming pithier. It was created 
 immediately before the initial release of Swift, which kind of obviated any further development along these lines. 
