@@ -1,3 +1,10 @@
+**[DEPRECATED]**
+
+This was an attempt to make Objective-C programming pithier. It was created 
+immediately before the initial release of Swift, which kind of obviated any further development along these lines. 
+
+------
+
 # What's this?
 
 A tiny library of Objective-C macros to aid concision, `@morph`, `@var` and
@@ -52,7 +59,7 @@ knows to do this
 Bonus: variable declarations line up a little better:
 
 ```
-@var(sillyString, @"Flibberty Slazzozalmockle!!");
+@var(sillyString, @"Flibberty gibberty!");
 @var(set, [NSMutableSet set]);
 @var(count, 1);
 ```
@@ -84,9 +91,7 @@ Using `@with`, this would be
 
 Download [`VARMacros.h`][file], add to your Xcode project, and `#import`. 
 
-A CocoaPod is on the way, or feel free to create one & pull request.
-
-# Questions, objections, ...
+# FAQ
 
 **What's `_`?**  
 It's a local variable. Yes, it's allowed.
@@ -97,22 +102,7 @@ No. Where needed, the macros use C scoping. The curly braces you see in the exam
 **MACROS BAD!!**  
 1. [Apple][block.h] uses them.  
 2. These are pretty simple macros.  
-3. I disagree, but OK, don't use them.
-
-**This hides behavior**  
-You mean like the ones and zeros you are reading right now?
-
-**This is {ugly, confusing, unclear}**  
-Tastes vary. So far, aesthetically, I like code using these macros better.
-It's almost always objectively shorter. To me, once you know what the macros
-do, the code is also clearer.
-
-**This is {inadvisable, dangerous, crazy}**  
-Possibly, to be determined.
-
-> The reasonable man adapts himself to the world; 
-> the unreasonable one persists in trying to adapt the world to himself. 
-> Therefore all progress depends on the unreasonable man.
+3. I disagree, but that's cool, don't use them.
 
 # License
 
